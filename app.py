@@ -73,6 +73,7 @@ with st.sidebar:
             "➕ Add Paper",
             "📖 Paper Library",
             "🔍 Insight Explorer",
+            "📅 Reading Plan",
             "📝 Weekly Diary",
             "🧩 Argument Builder",
             "📊 Gap Analysis",
@@ -109,6 +110,10 @@ elif page == "📖 Paper Library":
 elif page == "🔍 Insight Explorer":
     from modules.insight_explorer import show_insight_explorer
     show_insight_explorer()
+
+elif page == "📅 Reading Plan":
+    from modules.reading_plan import show_reading_plan
+    show_reading_plan()
 
 elif page == "📝 Weekly Diary":
     from modules.weekly_diary import show_weekly_diary
