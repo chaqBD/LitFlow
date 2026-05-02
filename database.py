@@ -1,7 +1,12 @@
+import os
 import sqlite3
 from datetime import datetime, timedelta
 
-DATABASE = "litflow.db"
+# On Railway the volume is mounted at /data; locally falls back to the cwd.
+_data_dir = os.environ.get("RAILWAY_VOLUME_MOUNT_PATH", "")
+if _data_dir:
+    os.makedirs(_data_dir, exist_ok=True)
+DATABASE = os.path.join(_data_dir, "litflow.db") if _data_dir else "litflow.db"
 
 
 def get_connection():
